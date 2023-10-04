@@ -1,8 +1,29 @@
-direction: left
+direction: right
 "curium five software OBC": {
   "device drivers": {
     "pca9547 (i2c multiplexer) A"
     "pca9547 (i2c multiplexer) B"
     "mcf8315a (brushless driver"
   }
+  "Tasks": {
+    "DefaultTask"
+    "wdg_task"
+    "osdlp_task ???"
+    "radio_task"
+    "osdlp_tx_task ???"
+    "fsm_task"
+    "pwr_task"
+    "mgmt_task"
+    "tm_rqst_task ???"
+    "exp_task ???"
+  }
+  "FreeRTOS": {
+    "Task Scheduler"
+    "Semaphores"
+    "Mutexes"
+    "Message Queues"
+    "Tasks"
+  }
+  "Tasks" -> "FreeRTOS"
+  "Tasks" -> "device drivers"
 }
