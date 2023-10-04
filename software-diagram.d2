@@ -1,5 +1,5 @@
 direction: right
-"curium five software OBC": {
+"curium OBC software": {
   "device drivers": {
     "pca9547 (i2c multiplexer) A"
     "pca9547 (i2c multiplexer) B"
@@ -9,7 +9,7 @@ direction: right
     "watchdog"
     "conf"
   }
-  "Tasks": {
+  "tasks": {
     "DefaultTask"
     "wdg_task"
     "osdlp_task ???"
@@ -28,7 +28,7 @@ direction: right
     "Message Queues"
     "Tasks"
   }
-  "Tasks" -> "FreeRTOS"
-  "Tasks" -> "device drivers"
-  "Tasks" -> "core functions"
+  "tasks" -> "FreeRTOS"
+  "tasks" -> "device drivers"
+  "tasks" -> "core functions"
 }
