@@ -5,6 +5,10 @@ direction: right
     "pca9547 (i2c multiplexer) B"
     "mcf8315a (brushless driver"
   }
+  "core functions": {
+    "watchdog"
+    "conf"
+  }
   "Tasks": {
     "DefaultTask"
     "wdg_task"
@@ -26,4 +30,5 @@ direction: right
   }
   "Tasks" -> "FreeRTOS"
   "Tasks" -> "device drivers"
+  "Tasks" -> "core functions"
 }
