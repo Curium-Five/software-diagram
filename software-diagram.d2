@@ -1,5 +1,35 @@
 direction: right
 "curium OBC software": {
+  "core functions": {
+    "watchdog"
+    "communication"
+    "conf"
+  }
+  "tasks": {
+    "default_task"
+    "wdg_task"
+    "ecss_task"
+    "uart task"
+    "radio_task"
+    "fsm_task"
+    "pwr_task"
+    "solar_task"
+    "nav_task"
+    "mgmt_task"
+  }
+  "FreeRTOS": {
+    "Task Scheduler"
+    "Semaphores"
+    "Mutexes"
+    "Message Queues"
+    "Tasks"
+  }
+  "tasks"."solar_task" -> "device drivers"."quadsolar"
+  "device drivers"."quadsolar": {
+    "Potentio. 4 out U26 AD5254 (100k)"
+    "Solar U/I Monitor U27 LTC2991"
+    "4x Buck Reg U28,30,32,34 LT8613EUDE"
+  }
   "device drivers": {
     "pca9547 (i2c multiplexer) A"
     "pca9547 (i2c multiplexer) B"
@@ -9,11 +39,6 @@ direction: right
     "Solar Connector Fine IR Sensor MLX90640"
     "Magtourquer PWM gen PCA9685BS" -> "3 Magtourquer driver DRV8837"
     "Navsensor ST Gyro A3G4250D"
-    "quadsolar": {
-      "Potentio. 4 out U26 AD5254 (100k)"
-      "Solar U/I Monitor U27 LTC2991"
-      "4x Buck Reg U28,30,32,34 LT8613EUDE"
-    }
     "Batt Monitor U4 BQ76920PW"
     "Current Limiter (lcl)": {
       "4x current- shunt monitor U38-41 INA202"
@@ -26,28 +51,6 @@ direction: right
       "Potentio. 4 out U17 AD5254 (100k)" -> limiter
       limiter: "8x Current Limiting Switch (payload, BLDC, MAG) AP22653Q"
     }
-  }
-  "core functions": {
-    "watchdog"
-    "conf"
-  }
-  "tasks": {
-    "default_task"
-    "wdg_task"
-    "ecss_task"
-    "uart task"
-    "radio_task"
-    "fsm_task"
-    "pwr_task"
-    "nav_task"
-    "mgmt_task"
-  }
-  "FreeRTOS": {
-    "Task Scheduler"
-    "Semaphores"
-    "Mutexes"
-    "Message Queues"
-    "Tasks"
   }
   "tasks" -> "FreeRTOS"
   "tasks" -> "device drivers"
