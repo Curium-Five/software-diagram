@@ -52,6 +52,7 @@ direction: right
       limiter: "8x Current Limiting Switch (payload, BLDC, MAG) AP22653Q"
     }
   }
+  "tasks"."wdg_task" -> "core functions"."watchdog"
   "tasks" -> "FreeRTOS"
   "tasks" -> "device drivers"
   "tasks" -> "core functions"
